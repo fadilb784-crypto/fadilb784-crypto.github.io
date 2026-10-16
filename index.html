@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio - Bayu Fadil</title>
+
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Source+Serif+4:wght@400;600&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="stylee.css">
+</head>
+<body>
+    <div class="page">
+
+        <!-- ===== SIDEBAR ===== -->
+        <header class="side">
+            <div class="avatar">
+                <img src="pp.jpeg" alt="Foto Bayu Fadil">
+            </div>
+            <div>
+                <h1>Bayu Fadil</h1>
+                <p class="role">Mahasiswa Teknik Informatika Universitas Muslim Indonesia</p>
+            </div>
+            <nav aria-label="Navigasi utama">
+                <a href="#beranda">Beranda</a>
+                <a href="#keahlian">Keahlian</a>
+                <a href="#proyek">Proyek</a>
+                <a href="#riwayat">Riwayat</a>
+                <a href="#kontak">Kontak</a>
+            </nav>
+        </header>
+
+        <!-- ===== KONTEN ===== -->
+        <main>
+
+            <section class="hero" id="beranda">
+                <h2>Website <mark>Portofolio</mark></h2>
+                <p>Halo, saya Bayu Fadil. Saya suka belajar pemrograman dan sistem operasi, lalu mengubahnya menjadi proyek nyata. Saya sangat menyukai bahasa pemrograman HTML dan CSS untuk membangun website yang responsif.</p>
+                <a class="btn" href="#proyek">Lihat Proyek</a>
+                <a class="btn ghost" href="#kontak">Hubungi Saya</a>
+            </section>
+
+            <section id="keahlian">
+                <h2>Keahlian</h2>
+                <ul class="skills">
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>JavaScript</li>
+                    <li>Git</li>
+                    <li>Python</li>
+                    <li>Jaringan</li>
+                    <li>Linux</li>
+                </ul>
+            </section>
+
+            <section id="proyek">
+                <h2>Proyek</h2>
+                <div class="grid">
+
+                    <article class="card">
+                        <img class="thumb" src="gambar/siakad.png" alt="ERD Sistem Informasi Akademik" loading="lazy">
+                        <h3>Sistem Informasi Akademik</h3>
+                        <p>Rancangan sistem untuk mengelola data mahasiswa, jadwal, dan nilai.</p>
+                        <span class="tags">Dokumen SKPL, ERD</span>
+                        <a href="https://ap.wps.com/cms/docs/d/cbPaecA6fslp3pjA?platform=pc&refer=copylink">Lihat Detail</a>
+                    </article>
+
+                    <article class="card">
+                        <video class="thumb" controls preload="metadata" poster="gambar/poster-video.jpg">
+                            <source src="video/tutorial-linux.mp4" type="video/mp4">
+                            Browser Anda tidak mendukung pemutaran video.
+                        </video>
+                        <h3>Video Tutorial Linux</h3>
+                        <p>Panduan langkah demi langkah membuat partisi menggunakan VirtualBox.</p>
+                        <span class="tags">VirtualBox, Kali Linux</span>
+                        <a href="#">Lihat Detail</a>
+                    </article>
+
+                    <article class="card">
+                        <img class="thumb" src="gambar/portofolio.jpeg" alt="Tampilan website portofolio" loading="lazy">
+                        <h3>Website Portofolio</h3>
+                        <p>Halaman pribadi yang responsif menggunakan HTML dan CSS.</p>
+                        <span class="tags">HTML, CSS</span>
+                        <a href="#">Lihat Detail</a>
+                    </article>
+
+                </div>
+            </section>
+
+            <section id="riwayat">
+                <h2>Riwayat</h2>
+                <ol class="timeline">
+                    <li>
+                        <b>Universitas Muslim Indonesia</b>
+                        <span>S1 Teknik Informatika · 2025 – 2026</span>
+                    </li>
+                    <li>
+                        <b>SMK Bina Mandiri Multimedia</b>
+                        <span>Rekayasa Perangkat Lunak · 2019 – 2022</span>
+                    </li>
+                </ol>
+            </section>
+
+            <section id="kontak" class="contact">
+                <h2>Kontak</h2>
+                <p>Terbuka untuk kolaborasi, magang, dan diskusi.</p>
+                <a href="mailto:fadilb784@gmail.com">fadilb784@gmail.com</a>
+                <a href="https://www.instagram.com/byuu.wan" target="_blank" rel="noopener">instagram.com/byuu.wan</a>
+                <a href="https://linkedin.com/" target="_blank" rel="noopener">linkedin.com/in/bayu-fadil</a>
+                <footer>© 2026 Bayu Fadil Hendrawan</footer>
+            </section>
+
+        </main>
+    </div>
+</body>
+</html>

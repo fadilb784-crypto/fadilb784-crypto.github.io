@@ -1,0 +1,146 @@
+/* ===== 1. PENGATURAN CEPAT: ubah warna & font di sini saja ===== */
+:root {
+  --bg: #f2f5f7;
+  --surface: #ffffff;
+  --ink: #14213d;
+  --muted: #5a6478;
+  --line: #d6dde5;
+  --accent: #2b50aa;
+  --accent-ink: #ffffff;
+  --mark: #f5c34b;
+
+  --font-head: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --font-body: "Source Serif 4", Georgia, "Times New Roman", serif;
+
+  --radius: 14px;
+  --sidebar: 300px;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0f1626;
+    --surface: #18223a;
+    --ink: #e8edf6;
+    --muted: #9aa6bd;
+    --line: #2a3654;
+    --accent: #8fb0ff;
+    --accent-ink: #0f1626;
+  }
+}
+
+/* ===== 2. DASAR ===== */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 1.5rem; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font: 1.0625rem/1.7 var(--font-body);
+}
+h1, h2, h3 { font-family: var(--font-head); line-height: 1.15; margin: 0; }
+p { margin: 0 0 1em; max-width: 62ch; }
+a { color: var(--accent); }
+:focus-visible { outline: 3px solid var(--mark); outline-offset: 3px; border-radius: 4px; }
+
+/* ===== 3. TATA LETAK: sidebar kiri + konten kanan ===== */
+.page { display: grid; grid-template-columns: var(--sidebar) 1fr; min-height: 100vh; }
+
+.side {
+  position: sticky; top: 0; align-self: start; height: 100vh;
+  padding: 2.5rem 2rem; display: flex; flex-direction: column; gap: 1.5rem;
+  border-right: 1px solid var(--line);
+  background:
+    linear-gradient(rgba(15, 22, 38, .75), rgba(15, 22, 38, .9)),
+    url("gambar/bg-sidebar.jpeg") center / cover no-repeat;
+  color: #fff;
+}
+.avatar {
+  width: 96px; height: 96px; border-radius: 50%;
+  background: var(--accent); color: var(--accent-ink);
+  display: grid; place-items: center;
+  font: 800 2rem var(--font-head);
+  box-shadow: 0 0 0 6px var(--mark);
+  overflow: hidden;
+}
+.avatar img { width: 100%; height: 100%; object-fit: cover; }
+
+.side h1 { font-size: 1.75rem; }
+.side .role { color: var(--muted); margin: .4rem 0 0; }
+.side nav { display: flex; flex-direction: column; gap: .25rem; margin-top: auto; }
+.side nav a {
+  font: 600 1rem var(--font-head); text-decoration: none; color: var(--ink);
+  padding: .5rem .75rem; border-radius: 8px;
+}
+.side nav a:hover { background: var(--surface); color: var(--accent); }
+
+main { padding: 3rem clamp(1.25rem, 5vw, 4rem) 4rem; max-width: 960px; }
+section { padding: 2.5rem 0; border-bottom: 1px solid var(--line); }
+section:last-of-type { border-bottom: 0; }
+section > h2 { font-size: 1.75rem; margin-bottom: 1.25rem; }
+
+/* ===== 4. HERO ===== */
+.hero { padding-top: 0; }
+.hero h2 { font-size: clamp(2rem, 5vw, 3.4rem); max-width: 18ch; margin-bottom: 1.25rem; }
+.hero mark { background: linear-gradient(transparent 60%, var(--mark) 60%); color: inherit; padding: 0 .1em; }
+.btn {
+  display: inline-block; padding: .7rem 1.3rem; border-radius: 999px;
+  font: 700 1rem var(--font-head); text-decoration: none;
+  background: var(--accent); color: var(--accent-ink);
+}
+.btn.ghost { background: transparent; color: var(--ink); border: 2px solid var(--line); margin-left: .5rem; }
+.btn:hover { filter: brightness(1.1); }
+
+/* ===== 5. KEAHLIAN ===== */
+.skills { display: flex; flex-wrap: wrap; gap: .6rem; padding: 0; margin: 0; list-style: none; }
+.skills li {
+  background: var(--surface); border: 1px solid var(--line);
+  padding: .35rem .9rem; border-radius: 999px; font: 500 .95rem var(--font-head);
+}
+
+/* ===== 6. PROYEK (otomatis menyesuaikan jumlah kolom) ===== */
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.25rem; }
+.card {
+  background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 1.25rem; display: flex; flex-direction: column; gap: .6rem;
+}
+.card .thumb {
+  aspect-ratio: 16/9; border-radius: 8px; background: var(--line);
+  display: grid; place-items: center; font: 700 1.1rem var(--font-head); color: var(--muted);
+}
+/* Video & gambar di dalam kartu (harus di LUAR blok .thumb di atas) */
+.card video.thumb,
+.card img.thumb { width: 100%; display: block; object-fit: contain; background: #000; }
+.card img.thumb { object-fit: cover; }
+
+.card h3 { font-size: 1.2rem; }
+.card p { font-size: .98rem; color: var(--muted); margin: 0; }
+.card .tags { font: 500 .85rem var(--font-head); color: var(--accent); margin-top: auto; }
+.card a { font: 700 .95rem var(--font-head); }
+
+/* ===== 7. RIWAYAT ===== */
+.timeline { list-style: none; padding: 0; margin: 0; border-left: 3px solid var(--line); }
+.timeline li { position: relative; padding: 0 0 1.5rem 1.5rem; }
+.timeline li::before {
+  content: ""; position: absolute; left: -9px; top: .55rem;
+  width: 15px; height: 15px; border-radius: 50%; background: var(--accent);
+  border: 3px solid var(--bg);
+}
+.timeline b { font-family: var(--font-head); display: block; }
+.timeline span { color: var(--muted); font-size: .95rem; }
+
+/* ===== 8. KONTAK ===== */
+.contact a { display: block; font: 600 1.15rem var(--font-head); margin-bottom: .4rem; }
+footer { color: var(--muted); font-size: .9rem; padding-top: 1.5rem; }
+
+/* ===== 9. RESPONSIF ===== */
+@media (max-width: 860px) {
+  .page { grid-template-columns: 1fr; }
+  .side {
+    position: static; height: auto; flex-direction: row; flex-wrap: wrap; align-items: center;
+    padding: 1.25rem; border-right: 0; border-bottom: 1px solid var(--line);
+  }
+  .avatar { width: 64px; height: 64px; font-size: 1.3rem; box-shadow: 0 0 0 4px var(--mark); }
+  .side h1 { font-size: 1.3rem; }
+  .side nav { flex-direction: row; width: 100%; margin-top: 0; overflow-x: auto; }
+  main { padding-top: 2rem; }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
